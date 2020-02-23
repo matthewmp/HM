@@ -205,10 +205,10 @@ section#home {
     max-width: 1400px;
     min-height: 85vh;
     background: linear-gradient(
+                rgba(255,255,255,1),
                 rgba(255,255,255,0.7),
                 rgba(255,255,255,0.7),
-                rgba(255,255,255,0.7),
-                rgba(255,255,255,0.7)), 
+                rgba(255,255,255,1)), 
                 url(./assets/class.png);
     background-size: cover;
     margin: 50px auto auto auto;
