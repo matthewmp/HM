@@ -1,0 +1,6 @@
+* Create functions to add/remove CSS animation to show drop down
+* Write function to check size of viewport
+    - If mobile remove animation
+    - Else, do not assign
+    - Add event listener for window.resize and call this function
+    - Run this function on window.load
