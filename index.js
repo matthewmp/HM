@@ -1,40 +1,50 @@
-var classesMenu = document.getElementsByClassName('classes-drop-down')[0];
+function showClassesDropDown(){
+    
+    var classesDropDown = document.querySelector('.classes-dropdown-wrapper');
 
-var visible = false;
-
-classesMenu.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    if(!visible && e.target.className === 'classes-drop-down'){
-        visible = !visible;
-        e.target.children[1].style.display = 'block';
+    classesIsVisible = !classesIsVisible;
+        classesDropDown.style.display = 'block';
         var top = 45;
         var x = 1;
         var interval = setInterval(function(){
             top--;
-            e.target.children[1].style.opacity = x/10 + '';
-            e.target.children[1].style.top = top + 'px';
+            classesDropDown.style.opacity = x/10 + '';
+            classesDropDown.style.top = top + 'px';
             x++;
             if(x >= 11){
                 clearInterval(interval)
             }
         }, 10);
-    } else if(visible && e.target.className === 'classes-drop-down'){
-        visible = !visible;
-        e.target.children[1].style.display = 'none'
-        e.target.children[1].style.opacity = '0'
-    }
-    
-}, {passive: false})
+}
 
-// classesMenu.addEventListener('mouseout', function(e){
-//     console.log(e.target.children[1]);
-//     try{
-//         e.target.children[1].style.display = 'none'
-//         e.target.children[1].style.opacity = '0'
-//     }
-//     catch(err){
-//         //
-//     }
+function hideClassesDropDown(){
+    var classesDropDown = document.querySelector('.classes-dropdown-wrapper');
+
+    classesIsVisible = !classesIsVisible;
     
-// })
+    classesDropDown.style.display = 'none'
+    classesDropDown.style.opacity = '0'
+}
+
+
+//  Classes Drop Down Visibility
+var classesIsVisible = false;   
+
+window.onload = function(){
+
+    var classesMenu = document.getElementsByClassName('classes-drop-down')[0];
+    
+    classesMenu.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(!classesIsVisible && e.target.className === 'classes-drop-down'){
+            showClassesDropDown();
+        } else if(classesIsVisible && e.target.className === 'classes-drop-down'){
+            hideClassesDropDown();
+        }
+    });
+
+    window.addEventListener('click', function(){
+        hideClassesDropDown();
+    })
+}
