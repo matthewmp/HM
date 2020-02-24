@@ -11,8 +11,8 @@
 <body>
     <div class="content-wrapper">
         <header>
-            <div class="header-img-container">
-                <img src="./assets/main-logo.png" alt="logo">
+            <div class="header-img-container section-link" data-section="home">
+                <img src="./assets/main-logo.png" data-section="home" class="section-link" alt="logo">
             </div>
 
             <div class="header-stripe">
@@ -28,9 +28,9 @@
                         <li class="classes-drop-down">Classes 
                             <img id="chevron" src="./assets/chevron.png" alt="chevron">
                             <div class="classes-dropdown-wrapper">
-                                <div class="classes-drop-down-item">ZEN Medtiation</div>
-                                <div class="classes-drop-down-item">ZEN Tai Chi</div>
-                                <div class="classes-drop-down-item">Schedule</div>
+                                <div class="section-link classes-drop-down-item" data-section="zen-meditation">ZEN Meditation</div>
+                                <div class="section-link classes-drop-down-item" data-section="zen-tai-chi">ZEN Tai Chi</div>
+                                <div class="section-link classes-drop-down-item" data-section="schedule">Schedule</div>
                             </div>
                         </li>
                         <li>School <img id="chevron" src="./assets/chevron.png" alt="chevron"></li>
@@ -45,12 +45,55 @@
         </header>
 
         <main>
-            <section id="home">
+            <section id="home" class="section-content">
 
             </section>
 
-            <section id="zen-meditation">
-                
+            <section id="zen-meditation" class="section-content">
+                <div class="section-content-wrapper">
+                    <h1 class="section-title">ZEN Meditation</h1>
+
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            <br>
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            <br>
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem 
+                            <br>
+                    
+
+                    <div class="container-row">
+                        <div class="container-col">
+                            <iframe width="311" height="175" src="https://www.youtube.com/embed/G5EPAKhV17o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+
+                        <div class="container-col">
+                            <ol>             
+                                <li>
+                                     <strong>Exercise Qi-Gong</strong> (Energy Circulation) training in depth to prepare meditation
+                                </li>
+        
+                                <li>
+                                     <strong>Practice real meditation</strong> and be a soulful and mindful being
+                                </li>
+        
+                                <li>
+                                     <strong>Experience</strong> de-stressing, deep relaxation, peace of mind and enhanced awareness by the end of each class
+                                </li>
+        
+                                <li>
+                                     <strong>Promote</strong> lasting effects on your overall health and well-being, as well as personal and professional growth with regular attendance
+                                </li>
+        
+                                <li>
+                                     <strong>Complement and prolong</strong> beneficial effects of private sessions
+                                </li>
+                            </ol>  
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
 
@@ -70,6 +113,7 @@
             </p>
         </footer>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>

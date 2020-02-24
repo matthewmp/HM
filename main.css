@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ul {
 	list-style: none;
 }
 blockquote, q {
@@ -48,10 +48,19 @@ table {
 
 /* End Reset */
 
+/* Reset Over Ride */
+strong {
+    font-weight: 800;
+}
 /* CONTENT WRAPPER */
 .content-wrapper {
     max-width: 1400px;
     margin: auto;
+    font-family: 'Roboto';
+}
+
+.section-content-wrapper li {
+    padding: 10px 0;
 }
 
 /* -----  Header ---------- */
@@ -68,6 +77,7 @@ header {
 .header-img-container {
     padding: 10px;
     padding-right: 35px;
+    cursor: pointer;
 }
 
 .header-stripe {
@@ -200,10 +210,56 @@ img#chevron {
     background: #A69CAC
 }
 
-/* Home Section */
-section#home {
+/* ========================== MAIN */
+main {
+    min-height: 80vh;
+}
+
+/* GRID SYSTEM */
+.container-row {
+    display: flex;
+    margin: 30px;
+}
+
+.container-col {
+    margin: 10px;
+}
+
+iframe {
+    /* width: 85%; */
+    max-width: 600px;
+    height: 100%;
+    min-height: 300px;
+    box-shadow: 0px 3px 15px;
+}
+
+/* ========================== SECTIONS */
+
+.section-content-wrapper {
+    max-width: 75%;
+    margin: auto;
+}
+
+.section-title{
+    font-size: 1.3em;
+    padding: 20px 0;
+    font-weight: 600;
+}
+
+section {
     max-width: 1400px;
     min-height: 85vh;
+    /* background: linear-gradient(
+                rgba(255,255,255,1),
+                rgba(255,255,255,0.7),
+                rgba(255,255,255,0.7),
+                rgba(255,255,255,1)), 
+                url(./assets/class.png); */
+    background-size: cover;
+    margin: 50px auto auto auto;
+}
+
+section#home{
     background: linear-gradient(
                 rgba(255,255,255,1),
                 rgba(255,255,255,0.7),
@@ -211,11 +267,37 @@ section#home {
                 rgba(255,255,255,1)), 
                 url(./assets/class.png);
     background-size: cover;
-    margin: 50px auto auto auto;
 }
 
+section#zen-meditation{
+    display: none;
+}
 
-/* Footer */
+section#zen-tai-chi{
+    display: none;
+}
+
+section#schedule{
+    display: none;
+}
+
+section#get-started{
+    display: none;
+}
+
+section#cd-books{
+    display: none;
+}
+
+section#about{
+    display: none;
+}
+
+section#contact{
+    display: none;
+}
+
+/* ========================== Footer */
 footer {
     max-width: 80%;
     margin-top: 20px;
@@ -225,7 +307,7 @@ footer {
     color: #333745;
 }
 
-/* Media Queries */
+/* ========================== Media Queries */
 
 @media only screen and (max-width: 1000px) {
     nav ul li {
@@ -295,22 +377,3 @@ footer {
         display: none;
     }
 }
-
-
-
-/* ANIMATIONS */
-@keyframes fadeRise {
-    from {
-        display: none;
-        opacity: 0;
-        top: 40px;
-    }
-
-    to{
-        display: block;
-        opacity: 1;
-        top: 35px;
-    }
-}
-
-
