@@ -57,6 +57,10 @@ function toggleSectionsInit(){
 
             // Show Relevant Section
             showSection(sectionName);
+
+            var mobileMenu = document.getElementsByClassName('mobile-menu')[0];
+            mobileMenu.classList.remove('active');
+            $('.hamburger').toggleClass('active', 5000);
         })
     }
 }
@@ -84,9 +88,7 @@ window.onload = function(){
     $( '.hamburger' ).click(function() {
 		$('.hamburger').toggleClass('active', 5000);
 
-	  	$('.mobile-menu').slideToggle( 'slow', function() {
-	    	// Animation complete.
-	  	});
+	  	$('.mobile-menu').toggleClass('active', 5000);
 	});
 
     // Close All Dropdowns on Irrelevant Window Click
@@ -94,5 +96,26 @@ window.onload = function(){
         hideClassesDropDown();
     });
 
+    /* Mobile Sub Menu Functions */
+    function toggleMobileClassesSubMenu(){
+        var mClassesSub = document.getElementsByClassName('mobile-classes-dropdown-wrapper')[0];
+        if(mClassesSub.style.display === 'block'){
+            console.log('block')
+            $(mClassesSub).fadeOut();
+        } else {
+            console.log('none', mClassesSub.style.display)
+            $(mClassesSub).fadeIn();
+        }
+    }
+
+    function mobileMenuEvents(){
+        var mClasses = document.getElementById('mobile-menu-item-classes');
+        mClasses.addEventListener('click', function(e){
+            toggleMobileClassesSubMenu();
+        })
+    }
+
+
     toggleSectionsInit();   
+    mobileMenuEvents();
 }
