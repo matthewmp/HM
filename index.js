@@ -18,12 +18,8 @@ function showClassesDropDown(){
 }
 
 function hideClassesDropDown(){
-    var classesDropDown = document.querySelector('.classes-dropdown-wrapper');
-
-    classesIsVisible = !classesIsVisible;
-    
-    classesDropDown.style.display = 'none'
-    classesDropDown.style.opacity = '0'
+    var classesDropDown = document.querySelector('.classes-dropdown-wrapper');    
+    $(classesDropDown).removeClass('fadeIn');
 }
 
 function hideAllDropDown(){
@@ -38,7 +34,7 @@ function showSection(sectionName){
     $('#' + sectionName).fadeIn();
 }
 
-// Manage Section Hide/Show Views
+// ================ Manage Section Hide/Show Views
 function toggleSectionsInit(){
     var sessionLinks = document.querySelectorAll('.section-link');
     
@@ -65,9 +61,15 @@ function toggleSectionsInit(){
     }
 }
 
-
-//  Classes Drop Down Visibility
-var classesIsVisible = false;   
+// Remove active mobile nav classes on window resize greater than 768
+function makeMobileMenuInactive(){
+    window.addEventListener('resize', function(e){
+        if(window.innerWidth >= 768){
+            $('.hamburger').removeClass('active');
+            $('.mobile-menu').removeClass('active');
+        }
+    })
+}
 
 window.onload = function(){
 
@@ -77,10 +79,9 @@ window.onload = function(){
     classesMenu.addEventListener('click', function(e){
         e.preventDefault();
         e.stopPropagation();
-        if(!classesIsVisible && e.target.className === 'classes-drop-down'){
-            showClassesDropDown();
-        } else if(classesIsVisible && e.target.className === 'classes-drop-down'){
-            hideClassesDropDown();
+        if(e.target.className === 'classes-drop-down'){
+            // showClassesDropDown();
+            $('.classes-dropdown-wrapper').toggleClass('fadeIn')
         }
     });
 
@@ -89,7 +90,9 @@ window.onload = function(){
 		$('.hamburger').toggleClass('active', 5000);
 
 	  	$('.mobile-menu').toggleClass('active', 5000);
-	});
+    });
+    
+    makeMobileMenuInactive();
 
     // Close All Dropdowns on Irrelevant Window Click
     window.addEventListener('click', function(){
@@ -100,10 +103,8 @@ window.onload = function(){
     function toggleMobileClassesSubMenu(){
         var mClassesSub = document.getElementsByClassName('mobile-classes-dropdown-wrapper')[0];
         if(mClassesSub.style.display === 'block'){
-            console.log('block')
             $(mClassesSub).fadeOut();
         } else {
-            console.log('none', mClassesSub.style.display)
             $(mClassesSub).fadeIn();
         }
     }

@@ -2,6 +2,10 @@
 Reset CSS
 */
 
+* {
+    box-sizing: border-box;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,11 +70,10 @@ strong {
 /* -----  Header ---------- */
 
 header {
-    /* background: lightblue; */
+    display: flex;
     max-width: 1400px;
     margin: auto;
     height: 100px;
-    display: flex;
     align-items: center;
 }
 
@@ -78,6 +81,9 @@ header {
     padding: 10px;
     padding-right: 35px;
     cursor: pointer;
+    display: inline-block;
+    max-width: 100px;
+    vertical-align: middle;
 }
 
 .header-stripe {
@@ -85,6 +91,9 @@ header {
     width: 100%;
     height: 45px;
     background: #FF5964;
+    display: inline-block;
+    max-width: 1262px;
+    vertical-align: middle;
 }
 
 span.header-title {
@@ -181,7 +190,7 @@ li.mobile-classes-drop-down {
 #mobile-chevron{
     vertical-align: middle;
     padding: 3px;
-    max-width: 10px;
+    /* max-width: 10px; */
 }
 
 .mobile-classes-dropdown-wrapper {
@@ -228,6 +237,7 @@ li#get-started {
     color: #fff;
     padding: 12px 12px;
     font-family: sans-serif;
+    box-sizing: content-box;
 }
 
 img#chevron {
@@ -247,11 +257,6 @@ img#chevron {
     transform: translate(-50%, 0%);
 }
 
-.classes-drop-down:hover .classes-dropdown-wrapper {
-    /* display: block;
-    animation: fadeRise 500ms forwards; */
-}
-
 .classes-drop-down-item {
     padding: 14px;
     border-bottom: 1px solid #d5d2d6;
@@ -268,13 +273,29 @@ main {
 }
 
 /* GRID SYSTEM */
-.container-row {
+.row {
     display: flex;
     margin: 30px;
+    padding-bottom: 100px;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-col {
+.col {
     margin: 10px;
+    display: inline-block;
+}
+
+.meditation-list {
+    padding-left: 10%;
+    text-align: left !important;
+    max-width: 600px;
+}
+
+.research-list {
+    padding-right: 10%;
+    text-align: left !important;
+    max-width: 600px;
 }
 
 iframe {
@@ -282,20 +303,36 @@ iframe {
     max-width: 600px;
     height: 100%;
     min-height: 300px;
+    min-width: 500px;
     box-shadow: 0px 3px 15px;
+}
+
+p.researchers {
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 5px;
 }
 
 /* ========================== SECTIONS */
 
 .section-content-wrapper {
+    font-size: 1.3em;
     max-width: 75%;
     margin: auto;
 }
 
 .section-title{
-    font-size: 1.3em;
-    padding: 20px 0;
+    font-size: 1.6em;
     font-weight: 600;
+    margin-left: 10%;
+    background: url(./assets/stroke.png);
+    background-size: contain;
+    max-width: 300px;
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
 }
 
 section {
@@ -374,15 +411,45 @@ footer {
         margin-left: 5px;
         max-width: 10px;
     }
+
+    /* Collapse Row/Column */
+    .row{
+        display: block;
+        padding-bottom: 0;
+    }
+
+    .col{
+        text-align: center;
+        margin: 10px auto;
+        padding-bottom: 0;
+        width: 100%;
+    }
+
+    .section-content-wrapper{
+        max-width: 100%;
+    }
+
+    .research-list, .meditation-list {
+        margin: 50px auto;
+        padding-left: 10%;
+        padding-right: 0;
+        display: block;
+    }
 }
 
-.fadeRise {
-    animation: fadeRise 500ms forwards !important;
+.fadeIn {
+    display: block;
+    animation: fadeIn 500ms forwards;
 }
 
 @media only screen and (min-width: 768px) {
     .mobile-menu {
-        display: none !important;
+        display: none;
+    }
+
+    .section-content-wrapper {
+        max-width: 100%;
+        margin: auto 30px;
     }
 }
 
@@ -397,12 +464,23 @@ footer {
 }
 
 @media only screen and (max-width: 530px) {
+    iframe {
+        min-width: 0;
+        min-height: 0;
+    }
+}
+
+@media only screen and (max-width: 530px) {
     span.header-title {
         line-height: 45px;
         color: #fff;
         font-family: 'Roboto';
         font-size: 20px;
         padding-left: 5px;
+    }
+
+    .section-content-wrapper {
+        font-size: 1em;
     }
 }
 
@@ -421,6 +499,10 @@ footer {
 
     .hamburger {
         right: 3px;
+    }
+
+    iframe {
+        max-width: 260px;
     }
 }
 
