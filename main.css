@@ -63,10 +63,6 @@ strong {
     font-family: 'Roboto';
 }
 
-.section-content-wrapper li {
-    padding: 10px 0;
-}
-
 /* -----  Header ---------- */
 
 header {
@@ -275,6 +271,7 @@ main {
 /* GRID SYSTEM */
 .row {
     display: flex;
+    position: relative;
     margin: 30px;
     padding-bottom: 100px;
     justify-content: center;
@@ -307,6 +304,44 @@ iframe {
     box-shadow: 0px 3px 15px;
 }
 
+.men-meditate {
+    background: url(./assets/men_meditate2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -350px;
+    min-height: 400px;
+    width: 100%;
+    margin: 20px auto;
+    filter: grayscale(1);
+    opacity: 0.4;
+}
+
+.begin-journey {
+    margin: auto auto 150px auto;
+    text-align: center;
+}
+
+.begin-journey span {
+    background: #FF5964;
+    padding: 16px 10px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.3em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.meditation-keywords-wrapper {
+    position: absolute;
+    right: 20%;
+}
+
+.meditation-keywords-wrapper div {
+    margin: 50px 0;
+    font-size: 1.8em;
+    color: firebrick;
+}
+
 p.researchers {
     font-size: 1.2em;
     font-weight: 800;
@@ -314,9 +349,15 @@ p.researchers {
 }
 
 /* ========================== SECTIONS */
+section li{
+        padding: 10px 0;
+}
+
+section#zen-meditation{
+    font-size: 1.3em;
+}
 
 .section-content-wrapper {
-    font-size: 1.3em;
     max-width: 75%;
     margin: auto;
 }
@@ -397,6 +438,11 @@ footer {
 }
 
 /* ========================== Media Queries */
+@media only screen and (max-width: 1220px) {
+    .men-meditate{
+        background-position: 0 -180px;
+    }
+}
 
 @media only screen and (max-width: 1000px) {
     nav ul li {
@@ -435,6 +481,20 @@ footer {
         padding-right: 0;
         display: block;
     }
+
+    .men-meditate{
+        background-position: 0 -90px;
+    }
+
+    .meditation-keywords-wrapper{
+        top: 15%;
+        right: 10%;
+    }
+
+    .begin-journey {
+        margin: 15px auto 100px auto;
+        text-align: center;
+    }
 }
 
 .fadeIn {
@@ -461,6 +521,26 @@ footer {
     .hamburger {
         display: block;
     }
+
+    .men-meditate{
+        background-position: 0 -10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .men-meditate{
+        background-position: 0 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .men-meditate{
+        background-position: 0 75px;
+    }
+
+    .meditation-keywords-wrapper div{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 530px) {
@@ -479,7 +559,7 @@ footer {
         padding-left: 5px;
     }
 
-    .section-content-wrapper {
+    section#zen-meditation {
         font-size: 1em;
     }
 }
