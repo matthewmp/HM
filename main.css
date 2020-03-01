@@ -592,7 +592,13 @@ footer {
     }
 }
 
-@media only screen and (max-width: 245px) {
+@media only screen and (max-width: 360px) {
+    .begin-journey span{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 265px) {
     span.header-title {
         display: none;
     }
