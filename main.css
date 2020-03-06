@@ -571,6 +571,10 @@ footer {
     section#zen-meditation {
         font-size: 1em;
     }
+
+    .mobile-menu-item {
+        font-size: 1em;
+    }
 }
 
 @media only screen and (max-width: 400px) {
