@@ -422,11 +422,20 @@ thead {
 
 th {
     padding: 20px 0;
+    background: #ccc;
+    border: 1px solid #999;
 }
 
 td {
     padding: 20px 0;
     text-align: center;
+    border: 1px solid #ccc;
+    min-width: 100px;
+}
+
+tr td:nth-child(1) {
+    background: #eee;
+    width: 100px;
 }
 
 /* Initial Section State */
@@ -475,6 +484,13 @@ footer {
         background-position: 0 -180px;
     }
 }
+
+/* @media only screen and (max-width: 1000px) {
+    td {
+        min-width: 85px !important;
+        font-size: 0.8em;
+    }
+} */
 
 @media only screen and (max-width: 1000px) {
     nav ul li {
@@ -526,6 +542,14 @@ footer {
     .begin-journey {
         margin: 50px auto 100px auto;
         text-align: center;
+    }
+
+    table {
+        font-size: 0.8em;
+    }
+
+    td {
+        min-width: 0px;
     }
 }
 
