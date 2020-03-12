@@ -398,6 +398,17 @@ p.researchers {
     padding: 5px;
 }
 
+/* Getting Started */
+.getting-started-image {
+    width: 100%;
+    min-height: 300px;
+    background: linear-gradient( rgba(255,255,255,1), rgba(255,255,255,0.7), rgba(255,255,255,0.7), rgba(255,255,255,1)), url(./assets/getting_started.jpg);
+    background-position: 0;
+    filter: grayscale(1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /* Tai Chi */
 .carousel {
     padding: 10px;
