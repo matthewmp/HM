@@ -47,7 +47,8 @@ function toggleSectionsInit(){
 
             // Get Session Name from Selected Link
             var sectionName = e.target.dataset.section;
-
+            console.log(sectionName);
+            console.log(e.target)
             // Hide All Sections
             hideAllSections();
 
@@ -56,7 +57,8 @@ function toggleSectionsInit(){
 
             var mobileMenu = document.getElementsByClassName('mobile-menu')[0];
             mobileMenu.classList.remove('active');
-            $('.hamburger').toggleClass('active', 5000);
+            $('.hamburger')[0].classList.remove('active');
+            // $('.hamburger').toggleClass('active', 5000);
         })
     }
 }
