@@ -63,6 +63,16 @@ strong {
     font-family: 'Roboto';
 }
 
+/* GENERAL */
+.left {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.right {
+    max-width: 80%;
+}
+
 /* -----  Header ---------- */
 
 header {
@@ -461,6 +471,137 @@ p.researchers {
     margin: auto;
 }
 
+/* Contact */
+h2.address {
+    text-align: center;
+    margin: 50px auto;
+    font-weight: 800;
+}
+
+span.span-address {
+    padding: 5px 0;
+    display: block;
+    font-size: 1.5em;
+}
+
+.center-pics {
+    margin: auto;
+    text-align: center;
+}
+
+.single-image {
+    text-align: center;
+}
+
+/* About */
+
+.bhf {
+    margin: 0;
+    padding: 10px;
+    position: absolute;
+    color: #fff;
+    top: 0;
+    left: 0;
+    background: #222;
+}
+
+.blog {
+    background: url(./assets/blog.jpg);
+    width: 80%;
+    margin: auto;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 1px 10px 10px #aaa;
+}
+
+.col-6.team-img {
+    margin: auto;
+    text-align: center;
+}
+
+.meditation-special {
+    padding: 5px 20px;
+}
+
+.team-img img {
+    max-width: 250px;
+    display: block;
+    margin: auto;
+    box-shadow: 2px 2px 10px #222;
+}
+
+section#about h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    padding: 10px 0;
+    width: 47%;
+}
+
+h4.contact-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2em;
+    padding: 20px;
+    color: #FF5964;
+    text-decoration: underline;
+}
+
+h3.contact-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+.our-blog {
+    margin-top: 50px;
+}
+
+#contact img{
+    max-width: 400px;
+    width: 100%;
+}
+
+h2.contact-headers {
+    text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 1.5em;
+}
+
+.parking-list {
+    text-align: center;
+}
+
+ul.parking-list li {
+    padding: 10px 13px;
+}
+
+p.train-route {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 800;
+    cursor: pointer;
+    margin: 20px auto;
+    max-width: 250px;
+    background: red;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: underline;
+}
+
+p.train-route a {
+    color: #fff;
+}
+/* BOOKS / CDS */
+.media-wrapper img {
+    box-shadow: 3px 4px 10px #222;
+    max-height: 300px;
+    max-width: 400px;
+}
+
 /* SCHEDULE */
 table {
     margin: 50px auto;
@@ -526,6 +667,10 @@ section#begin{
 }
 
 section#private{
+    display: none;
+}
+
+section#books{
     display: none;
 }
 
@@ -611,6 +756,18 @@ footer {
 
     td {
         min-width: 0px;
+    }
+
+    .col-6 {
+        max-width: 100%;
+    }
+
+    .right {
+        max-width: 100%;
+    }
+
+    .media-wrapper img {
+        max-width: 300px;
     }
 }
 
