@@ -602,6 +602,28 @@ p.train-route a {
     max-width: 400px;
 }
 
+.audio-links-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.audio-link {
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    background: #FF5964;
+    color: #fff;
+    box-shadow: 1px 1px 5px #666;
+}
+
+.audio-link:hover {
+    background: #fff;
+    color: #222;
+    transition: 300ms;
+}
+
 /* SCHEDULE */
 table {
     margin: 50px auto;
