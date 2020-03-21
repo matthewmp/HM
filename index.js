@@ -47,8 +47,7 @@ function toggleSectionsInit(){
 
             // Get Session Name from Selected Link
             var sectionName = e.target.dataset.section;
-            console.log(sectionName);
-            console.log(e.target)
+
             // Hide All Sections
             hideAllSections();
 
@@ -121,4 +120,8 @@ window.onload = function(){
 
     toggleSectionsInit();   
     mobileMenuEvents();
+
+    var spinner = document.getElementById('spinner');
+
+    $(spinner).fadeOut();
 }

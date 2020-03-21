@@ -731,6 +731,82 @@ section#school{
     display: none;
 }
 
+/* SPINNER */
+
+#spinner {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 89, 100, 0.9);
+  }
+  
+  #spinner-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  div#spinner-text {
+    color: #fff;
+    font-family: 'Roboto';
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+  .dot-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dot {
+    height: 5px;
+    width: 5px;
+    display: inline-block; 
+    border-radius: 50%;
+    margin: 5px;
+    background: #fff;
+  }
+  
+  .dot1{
+    animation: spinnerAnimation 500ms infinite;
+  }
+  
+  .dot2{
+    animation: spinnerAnimation 500ms infinite;
+    animation-delay: 100ms;
+  }
+  
+  .dot3{
+    animation: spinnerAnimation 500ms infinite;
+    animation-delay: 200ms;
+  }
+  
+  @keyframes spinnerAnimation {
+    0% {
+      width: 5px;
+      height: 5px;
+      opacity: 0.5;
+    }
+    
+    50% {
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+    }
+    
+    to {
+      width: 5px;
+      height: 5px;
+      opacity: 0.5;
+    }
+  }
+
 /* ========================== Footer */
 footer {
     max-width: 80%;
@@ -855,6 +931,10 @@ footer {
 
     .men-meditate{
         background-position: 0 -10px;
+    }
+
+    section#school h4.contact-title {
+        font-size: 1em;
     }
 }
 
