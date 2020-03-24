@@ -59,9 +59,6 @@ function toggleSectionsInit(){
             // Get Session Name from Selected Link
             var sectionName = e.target.dataset.section;
 
-            // Hide All Sections
-            hideAllSections();
-
             // Show Relevant Section
             changeHashLocation(sectionName);
 
@@ -133,6 +130,10 @@ window.onload = function(){
 
     window.addEventListener('hashchange', function(e){
         var sectionName = window.location.hash.replace('#', '');
+
+        // Hide All Sections
+        hideAllSections();
+
         showSection(sectionName);
     })
 
