@@ -34,6 +34,10 @@ function showSection(sectionName){
     $('#' + sectionName).fadeIn();
 }
 
+function changeHashLocation(sectionName) {
+    window.location.hash = sectionName;
+}
+
 // ================ Manage Section Hide/Show Views
 function toggleSectionsInit(){
     var sessionLinks = document.querySelectorAll('.section-link');
@@ -52,12 +56,11 @@ function toggleSectionsInit(){
             hideAllSections();
 
             // Show Relevant Section
-            showSection(sectionName);
+            changeHashLocation(sectionName);
 
             var mobileMenu = document.getElementsByClassName('mobile-menu')[0];
             mobileMenu.classList.remove('active');
             $('.hamburger')[0].classList.remove('active');
-            // $('.hamburger').toggleClass('active', 5000);
         })
     }
 }
@@ -121,7 +124,12 @@ window.onload = function(){
     toggleSectionsInit();   
     mobileMenuEvents();
 
-    var spinner = document.getElementById('spinner');
+    window.addEventListener('hashchange', function(e){
+        var sectionName = window.location.hash.replace('#', '');
+        console.log(sectionName)
+        showSection(sectionName);
+    })
 
+    var spinner = document.getElementById('spinner');
     $(spinner).fadeOut();
 }
