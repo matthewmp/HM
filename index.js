@@ -31,7 +31,14 @@ function hideAllSections(){
 }
 
 function showSection(sectionName){
-    $('#' + sectionName).fadeIn();
+    hideAllSections();
+    
+    if(sectionName){
+        $('#' + sectionName).fadeIn();
+    } else {
+        $('#home').fadeIn();
+    }
+    
 }
 
 function changeHashLocation(sectionName) {
@@ -126,7 +133,6 @@ window.onload = function(){
 
     window.addEventListener('hashchange', function(e){
         var sectionName = window.location.hash.replace('#', '');
-        console.log(sectionName)
         showSection(sectionName);
     })
 
